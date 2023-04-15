@@ -2,10 +2,13 @@
 package src_View;
 
 import java.awt.BorderLayout;
+import javax.swing.ButtonGroup;
+import javax.swing.JOptionPane;
+import src_module.NguoiChoi;
 
 public class ManHinhDangNhap extends javax.swing.JFrame {
-
-
+    NguoiChoi nguoiChoiDaDangNhap;
+    String banLaAi;
     public ManHinhDangNhap() {
         initComponents();
     }
@@ -14,7 +17,7 @@ public class ManHinhDangNhap extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        groupLoaiNguoiChoi = new javax.swing.ButtonGroup();
+        btnGroupLoaiNguoiChoi = new javax.swing.ButtonGroup();
         panlManHinhDangNhap = new javax.swing.JPanel();
         btnQuayLai = new javax.swing.JButton();
         panDangNhap = new javax.swing.JPanel();
@@ -24,8 +27,8 @@ public class ManHinhDangNhap extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jtxtTenDangNhap = new javax.swing.JTextField();
-        jtxtMatKhau = new javax.swing.JPasswordField();
+        txtTenDangNhap = new javax.swing.JTextField();
+        txtMatKhau = new javax.swing.JPasswordField();
         labQuyenMatKhau = new javax.swing.JLabel();
         btnDangNhap = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -49,7 +52,7 @@ public class ManHinhDangNhap extends javax.swing.JFrame {
         panlManHinhDangNhap.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnQuayLai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/quaylai.png"))); // NOI18N
-        btnQuayLai.setToolTipText("");
+        btnQuayLai.setToolTipText("Quay lại");
         btnQuayLai.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnQuayLai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,11 +97,13 @@ public class ManHinhDangNhap extends javax.swing.JFrame {
         jLabel2.setToolTipText("");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 110, 20));
 
-        jtxtTenDangNhap.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jPanel1.add(jtxtTenDangNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 320, 40));
+        txtTenDangNhap.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        txtTenDangNhap.setText("hieu");
+        jPanel1.add(txtTenDangNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 320, 40));
 
-        jtxtMatKhau.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jPanel1.add(jtxtMatKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 320, 40));
+        txtMatKhau.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        txtMatKhau.setText("123");
+        jPanel1.add(txtMatKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 320, 40));
 
         labQuyenMatKhau.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         labQuyenMatKhau.setText("Quyên mật khẩu...");
@@ -143,16 +148,26 @@ public class ManHinhDangNhap extends javax.swing.JFrame {
         jLabel6.setText("Bạn là:");
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 50, 20));
 
-        groupLoaiNguoiChoi.add(rbtnNguoiQuanLy);
+        btnGroupLoaiNguoiChoi.add(rbtnNguoiQuanLy);
         rbtnNguoiQuanLy.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         rbtnNguoiQuanLy.setText("Người Quản lý");
         rbtnNguoiQuanLy.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        rbtnNguoiQuanLy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnNguoiChoiActionPerformed(evt);
+            }
+        });
         jPanel3.add(rbtnNguoiQuanLy, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
 
-        groupLoaiNguoiChoi.add(rbtnNguoiChoi);
+        btnGroupLoaiNguoiChoi.add(rbtnNguoiChoi);
         rbtnNguoiChoi.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         rbtnNguoiChoi.setText("Người chơi");
         rbtnNguoiChoi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        rbtnNguoiChoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnNguoiChoiActionPerformed(evt);
+            }
+        });
         jPanel3.add(rbtnNguoiChoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 200, 80));
@@ -172,19 +187,43 @@ public class ManHinhDangNhap extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
         
-        // Check tài khoản mật khẩu... theo loại người dùng
-        
-        
-        // khi đã đang nhập đúng - cần có class người chơi để lưu người đó lại!
-        // -> chuyển người chơi về lựa chọn quyền của họ!\
-        this.setVisible(false);
-        ManHinhQuyenNguoiChoi manHinhQuyenNguoiChoi = new ManHinhQuyenNguoiChoi();
-        manHinhQuyenNguoiChoi.setLocationRelativeTo(null);
-        manHinhQuyenNguoiChoi.setVisible(true);
-        this.dispose();
+        // Check tài khoản mật khẩu..
+        // loại người dùng lưu trong biến banLaAi rồi
+        String tenDangNhap = txtTenDangNhap.getText();
+        String matKhau = String.valueOf(txtMatKhau.getPassword());
+        if(banLaAi == null){
+            return;
+        }
+        if(banLaAi.equals("nguoiChoi")){
+            NguoiChoi tempChoi = new NguoiChoi(tenDangNhap,matKhau);
+            NguoiChoi admin = new NguoiChoi();
+            NguoiChoi nguoiChoiTimDuoc = admin.soSanhTendnVaMatKhau(tempChoi);
+            if(nguoiChoiTimDuoc==null){
+                  JOptionPane.showMessageDialog(this,
+                    "Thông tin đăng nhập không chính xác!",
+                    "Thông báo",
+                    JOptionPane.ERROR_MESSAGE);
+            }
+            else{
+                nguoiChoiDaDangNhap = nguoiChoiTimDuoc;
+                this.setVisible(false);
+                ManHinhQuyenNguoiChoi manHinhQuyenNguoiChoi = new ManHinhQuyenNguoiChoi(nguoiChoiDaDangNhap);
+                manHinhQuyenNguoiChoi.setLocationRelativeTo(null);
+                manHinhQuyenNguoiChoi.setVisible(true);
+                this.dispose();
+            }           
+        }
+         if(banLaAi.equals("nguoiQuanLy")){
+                this.setVisible(false);
+                ManHinhQuyenNguoiQuanLy manHinhQuyenNguoiQuanLy = new ManHinhQuyenNguoiQuanLy();
+                manHinhQuyenNguoiQuanLy.setLocationRelativeTo(null);
+                manHinhQuyenNguoiQuanLy.setVisible(true);
+                this.dispose();
+         }
     }//GEN-LAST:event_btnDangNhapActionPerformed
 
     private void btnQuayLaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuayLaiActionPerformed
@@ -216,12 +255,21 @@ public class ManHinhDangNhap extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_labQuyenMatKhauMousePressed
 
+    private void rbtnNguoiChoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnNguoiChoiActionPerformed
+         if(evt.getSource()==rbtnNguoiChoi) {
+            banLaAi = "nguoiChoi";
+         }
+         if(evt.getSource()==rbtnNguoiQuanLy) {
+            banLaAi = "nguoiQuanLy";
+         }
+    }//GEN-LAST:event_rbtnNguoiChoiActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDangNhap;
+    private javax.swing.ButtonGroup btnGroupLoaiNguoiChoi;
     private javax.swing.JButton btnQuayLai;
-    private javax.swing.ButtonGroup groupLoaiNguoiChoi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -230,8 +278,6 @@ public class ManHinhDangNhap extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JPasswordField jtxtMatKhau;
-    private javax.swing.JTextField jtxtTenDangNhap;
     private javax.swing.JLabel labDangKyNgay;
     private javax.swing.JLabel labNenManKhoiDong;
     private javax.swing.JLabel labQuyenMatKhau;
@@ -241,5 +287,7 @@ public class ManHinhDangNhap extends javax.swing.JFrame {
     private javax.swing.JPanel panlManHinhDangNhap;
     private javax.swing.JRadioButton rbtnNguoiChoi;
     private javax.swing.JRadioButton rbtnNguoiQuanLy;
+    private javax.swing.JPasswordField txtMatKhau;
+    private javax.swing.JTextField txtTenDangNhap;
     // End of variables declaration//GEN-END:variables
 }

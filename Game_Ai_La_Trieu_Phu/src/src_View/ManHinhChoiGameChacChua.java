@@ -10,13 +10,16 @@ import javax.lang.model.util.ElementScanner14;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import src_module.NguoiChoi;
 
 
 public class ManHinhChoiGameChacChua extends javax.swing.JFrame {
 
-
-    public ManHinhChoiGameChacChua() {
+    NguoiChoi nguoiChoiDaDangNhap;
+    public ManHinhChoiGameChacChua(NguoiChoi nguoiChoiThat) {
         initComponents();
+        nguoiChoiDaDangNhap = nguoiChoiThat;
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -118,8 +121,8 @@ public static void nhapNhay(JPanel pn){
        if(cmd.equals("Sẵn sàng")){  
            
         // Sẵn sàng thì vào màn chơi game chính:
-        
-        ManHinhChoiGameThat manHinhChoiGameThat = new ManHinhChoiGameThat();
+        this.setVisible(false);
+        ManHinhChoiGameThat manHinhChoiGameThat = new ManHinhChoiGameThat(nguoiChoiDaDangNhap);
         manHinhChoiGameThat.setLocationRelativeTo(null);
         manHinhChoiGameThat.setVisible(true);
 

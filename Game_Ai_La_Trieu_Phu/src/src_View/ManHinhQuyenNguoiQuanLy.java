@@ -43,7 +43,7 @@ public class ManHinhQuyenNguoiQuanLy extends javax.swing.JFrame {
         panQuyen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panHeader.setBackground(new java.awt.Color(102, 255, 102));
-        panHeader.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 255, 255)));
+        panHeader.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         panHeader.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
@@ -53,6 +53,7 @@ public class ManHinhQuyenNguoiQuanLy extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(102, 204, 0));
         jButton1.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         jButton1.setText("Đăng xuất");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         panHeader.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, 110, -1));
 
         panQuyen.add(panHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 50));
@@ -64,6 +65,7 @@ public class ManHinhQuyenNguoiQuanLy extends javax.swing.JFrame {
         panQuyen.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 750, 10));
 
         panMauNenThaoTac.setBackground(new java.awt.Color(102, 255, 102));
+        panMauNenThaoTac.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         panMauNenThaoTac.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jToolBar1.setRollover(true);
@@ -94,7 +96,6 @@ public class ManHinhQuyenNguoiQuanLy extends javax.swing.JFrame {
 
         labNenManKhoiDong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/nenVaoChoi.png"))); // NOI18N
         labNenManKhoiDong.setText("jLabel1");
-        labNenManKhoiDong.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         labNenManKhoiDong.setMaximumSize(new java.awt.Dimension(1000, 552));
         labNenManKhoiDong.setMinimumSize(new java.awt.Dimension(1000, 552));
         panManHinhNguoiQuanLy.add(labNenManKhoiDong, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, 1000, 552));
