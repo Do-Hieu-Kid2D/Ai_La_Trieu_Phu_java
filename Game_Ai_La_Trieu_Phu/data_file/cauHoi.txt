@@ -1,0 +1,4 @@
+3    Ny bạn là ai?    Thu Hà    k có    Kim Liên    Lệ Quyên
+2    Ny bạn là ai?    Thu Hà    k có    Kim Liên    Lệ Quyên
+1    Ny bạn là ai?    Thu Hà    k có    Kim Liên    Lệ Quyên
+0    Ny bạn là ai?    Thu Hà    k có    Kim Liên    Lệ Quyên

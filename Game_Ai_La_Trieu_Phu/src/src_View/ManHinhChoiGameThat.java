@@ -1,30 +1,23 @@
 
 package src_View;
 
-import java.awt.BorderLayout;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.lang.model.util.ElementScanner14;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import src_module.NguoiChoi;
+import src_module.CauHoi;
 
 public class ManHinhChoiGameThat extends javax.swing.JFrame {
+     NguoiChoi nguoiChoiDaDangNhap;
 
-
-    public ManHinhChoiGameThat() {
+    public ManHinhChoiGameThat(NguoiChoi nguoiChoiThat) {
         initComponents();
         canGiuaTXTLable(labCauHoiTriGia);
         canGiuaTXTLable(labTienCuaBan);
-       
+        nguoiChoiDaDangNhap = nguoiChoiThat;  
+        labTenNguoiChoi.setText(nguoiChoiDaDangNhap.getTenNguoiChoi());
+        this.taiCauHoiLen();
     }
     
-    public static void canGiuaTXTLable(JLabel lb){
-        
-        // Hàm này để căn giữa chữ cho TXT trong lable
-        
-        lb.setHorizontalAlignment(SwingConstants.CENTER);
-        lb.setVerticalAlignment(SwingConstants.CENTER);
-    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -33,7 +26,7 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
         panNguoiChoi = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        labTenNguoiChoi = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         labCauHoiTriGia = new javax.swing.JLabel();
@@ -65,12 +58,12 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         panCauHoi = new javax.swing.JPanel();
         panChuaCauHoi = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
+        labNoiDungCauHoi = new javax.swing.JLabel();
         panCauTraLoi = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
+        labCauA = new javax.swing.JLabel();
+        labCauB = new javax.swing.JLabel();
+        labCauC = new javax.swing.JLabel();
+        labCauD = new javax.swing.JLabel();
         labNenManKhoiDong = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -95,16 +88,16 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/user-icon.png"))); // NOI18N
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 50, 60));
 
-        jLabel18.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel18.setText("UserName");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 90, 30));
+        labTenNguoiChoi.setFont(new java.awt.Font("Dialog", 1, 17)); // NOI18N
+        labTenNguoiChoi.setText("UserName");
+        jPanel1.add(labTenNguoiChoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 90, 30));
 
         panNguoiChoi.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 140, 80));
 
         jPanel2.setBackground(new java.awt.Color(248, 249, 178));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel19.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        jLabel19.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel19.setText("Câu hỏi trị giá:");
         jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
@@ -142,12 +135,14 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/50-50.jpg"))); // NOI18N
         jButton1.setText("50/50");
+        jButton1.setToolTipText("Loại bỏ hai đáp án sai");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/phone-icon.png"))); // NOI18N
         jButton2.setText("CALL");
+        jButton2.setToolTipText("Gọi điện nhận tư vấn");
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
@@ -261,11 +256,14 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
         panChuaCauHoi.setBackground(new java.awt.Color(165, 43, 175));
         panChuaCauHoi.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel20.setBackground(new java.awt.Color(153, 153, 255));
-        jLabel20.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        jLabel20.setText("Câu hỏi: Demo song chưa>>?>??>?>>>>>>>>");
-        jLabel20.setOpaque(true);
-        panChuaCauHoi.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 510, 110));
+        labNoiDungCauHoi.setBackground(new java.awt.Color(153, 153, 255));
+        labNoiDungCauHoi.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        labNoiDungCauHoi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        labNoiDungCauHoi.setText("Câu hỏi: Demo song chưa>>?>??>?>>>>>>>>dư9d9qydgqcgc9hqw9h9wh9cwhc9hwq98hc98");
+        labNoiDungCauHoi.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        labNoiDungCauHoi.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 255), 5));
+        labNoiDungCauHoi.setOpaque(true);
+        panChuaCauHoi.add(labNoiDungCauHoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 510, 110));
 
         panCauHoi.add(panChuaCauHoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 530, 130));
 
@@ -273,33 +271,33 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
         panCauTraLoi.setOpaque(false);
         panCauTraLoi.setLayout(new java.awt.GridLayout(2, 2, 10, 10));
 
-        jLabel25.setBackground(new java.awt.Color(153, 153, 255));
-        jLabel25.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        jLabel25.setText("jLabel25");
-        jLabel25.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(165, 43, 175), 6, true));
-        jLabel25.setOpaque(true);
-        panCauTraLoi.add(jLabel25);
+        labCauA.setBackground(new java.awt.Color(153, 153, 255));
+        labCauA.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labCauA.setText("jLabel25");
+        labCauA.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(165, 43, 175), 6, true));
+        labCauA.setOpaque(true);
+        panCauTraLoi.add(labCauA);
 
-        jLabel21.setBackground(new java.awt.Color(153, 153, 255));
-        jLabel21.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        jLabel21.setText("jLabel21");
-        jLabel21.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(165, 43, 175), 6, true));
-        jLabel21.setOpaque(true);
-        panCauTraLoi.add(jLabel21);
+        labCauB.setBackground(new java.awt.Color(153, 153, 255));
+        labCauB.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labCauB.setText("jLabel21");
+        labCauB.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(165, 43, 175), 6, true));
+        labCauB.setOpaque(true);
+        panCauTraLoi.add(labCauB);
 
-        jLabel24.setBackground(new java.awt.Color(153, 153, 255));
-        jLabel24.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        jLabel24.setText("jLabel24");
-        jLabel24.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(165, 43, 175), 6, true));
-        jLabel24.setOpaque(true);
-        panCauTraLoi.add(jLabel24);
+        labCauC.setBackground(new java.awt.Color(153, 153, 255));
+        labCauC.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labCauC.setText("jLabel24");
+        labCauC.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(165, 43, 175), 6, true));
+        labCauC.setOpaque(true);
+        panCauTraLoi.add(labCauC);
 
-        jLabel26.setBackground(new java.awt.Color(153, 153, 255));
-        jLabel26.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        jLabel26.setText("jLabel26");
-        jLabel26.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(165, 43, 175), 6, true));
-        jLabel26.setOpaque(true);
-        panCauTraLoi.add(jLabel26);
+        labCauD.setBackground(new java.awt.Color(153, 153, 255));
+        labCauD.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labCauD.setText("jLabel26");
+        labCauD.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(165, 43, 175), 6, true));
+        labCauD.setOpaque(true);
+        panCauTraLoi.add(labCauD);
 
         panCauHoi.add(panCauTraLoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 530, 150));
 
@@ -314,8 +312,42 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-
+       
+    public static void canGiuaTXTLable(JLabel lb){
+        // Hàm này để căn giữa chữ cho TXT trong lable
+        lb.setHorizontalAlignment(SwingConstants.CENTER);
+        lb.setVerticalAlignment(SwingConstants.CENTER);
+    }
+    
+    public void hienThongTin(JLabel lb, String txt){
+        StringBuilder sb = new StringBuilder(64);
+        sb.append("<html>").
+            append(txt).
+            append("</html>");
+        lb.setText(sb.toString());
+        
+    }
+    public void taiCauHoiLen(){
+        CauHoi admind = new CauHoi();
+        CauHoi cauHoiHienTai = admind.randomCauHoi();
+        String noiDung = cauHoiHienTai.getNoiDung();
+        String dapAnDung = cauHoiHienTai.getDapAnDung();
+        String dapAnSai1 = cauHoiHienTai.getDapAnSai1();
+        String dapAnSai2 = cauHoiHienTai.getDapAnSai2();
+        String dapAnSai3 = cauHoiHienTai.getDapAnSai3();
+//        System.out.println(noiDung);
+//        System.out.println(dapAnDung);
+//        System.out.println(dapAnSai1);
+//        System.out.println(dapAnSai2);
+//        System.out.println(dapAnSai3);
+       
+        this.hienThongTin(labNoiDungCauHoi, "Câu hỏi: "+ noiDung);
+        this.hienThongTin(labCauA, "A. "+ dapAnDung);
+        this.hienThongTin(labCauB, "B. "+ dapAnSai1);
+        this.hienThongTin(labCauC, "C. "+ dapAnSai2);
+        this.hienThongTin(labCauD, "D. "+ dapAnSai3);
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -330,16 +362,10 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -352,8 +378,14 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel labCauA;
+    private javax.swing.JLabel labCauB;
+    private javax.swing.JLabel labCauC;
+    private javax.swing.JLabel labCauD;
     private javax.swing.JLabel labCauHoiTriGia;
     private javax.swing.JLabel labNenManKhoiDong;
+    private javax.swing.JLabel labNoiDungCauHoi;
+    private javax.swing.JLabel labTenNguoiChoi;
     private javax.swing.JLabel labTienCuaBan;
     private javax.swing.JPanel panCauHoi;
     private javax.swing.JPanel panCauTraLoi;

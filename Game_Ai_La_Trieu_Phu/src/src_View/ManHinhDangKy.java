@@ -51,7 +51,7 @@ public class ManHinhDangKy extends javax.swing.JFrame {
         panlManHinhDangNhap.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnQuayLai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/quaylai.png"))); // NOI18N
-        btnQuayLai.setToolTipText("");
+        btnQuayLai.setToolTipText("Quay lại");
         btnQuayLai.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnQuayLai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

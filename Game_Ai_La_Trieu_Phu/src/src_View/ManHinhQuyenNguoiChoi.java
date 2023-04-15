@@ -2,13 +2,17 @@
 package src_View;
 
 import javax.swing.JOptionPane;
+import  src_module.NguoiChoi;
 
 
 public class ManHinhQuyenNguoiChoi extends javax.swing.JFrame {
     
+    NguoiChoi nguoiChoiDaDangNhap;
 
-    public ManHinhQuyenNguoiChoi() {
+    public ManHinhQuyenNguoiChoi( NguoiChoi nguoiChoiThat) {
         initComponents();
+        nguoiChoiDaDangNhap = nguoiChoiThat;
+        labTenNguoiChoi.setText(nguoiChoiDaDangNhap.getTenNguoiChoi()); 
     }
 
 
@@ -23,7 +27,7 @@ public class ManHinhQuyenNguoiChoi extends javax.swing.JFrame {
         btnThoat = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        labTenNguoiChoi = new javax.swing.JLabel();
         labNenManKhoiDong = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -79,10 +83,10 @@ public class ManHinhQuyenNguoiChoi extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/user-icon.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 60, 70));
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("UserName");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 150, 40));
+        labTenNguoiChoi.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
+        labTenNguoiChoi.setForeground(new java.awt.Color(255, 255, 255));
+        labTenNguoiChoi.setText("UserName");
+        jPanel1.add(labTenNguoiChoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 150, 40));
 
         panlManHinhKhoiDong.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 240, 90));
 
@@ -126,12 +130,10 @@ public class ManHinhQuyenNguoiChoi extends javax.swing.JFrame {
     private void btnChoiNgayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChoiNgayActionPerformed
         
         // Khi người chơi chọn "chơi ngay" thì gọi màn chắc chưa để zui zẻ!
-        
-        ManHinhChoiGameChacChua manHinhChoiGame = new ManHinhChoiGameChacChua();
+        ManHinhChoiGameChacChua manHinhChoiGame = new ManHinhChoiGameChacChua(nguoiChoiDaDangNhap);
         manHinhChoiGame.setLocationRelativeTo(null);
         manHinhChoiGame.setVisible(true);
-        this.dispose();
-        
+        this.dispose();      
     }//GEN-LAST:event_btnChoiNgayActionPerformed
 
     private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
@@ -162,9 +164,9 @@ public class ManHinhQuyenNguoiChoi extends javax.swing.JFrame {
     private javax.swing.JButton btnDangXuat;
     private javax.swing.JButton btnThoat;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labNenManKhoiDong;
+    private javax.swing.JLabel labTenNguoiChoi;
     private javax.swing.JPanel panl3NutKhoiDong;
     private javax.swing.JPanel panlManHinhKhoiDong;
     // End of variables declaration//GEN-END:variables
