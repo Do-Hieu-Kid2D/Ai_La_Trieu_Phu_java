@@ -4,7 +4,7 @@ package src_View;
 import java.awt.BorderLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
-import src_module.NguoiChoi;
+import src_module.*;
 
 public class ManHinhDangNhap extends javax.swing.JFrame {
     NguoiChoi nguoiChoiDaDangNhap;
@@ -196,6 +196,11 @@ public class ManHinhDangNhap extends javax.swing.JFrame {
         String tenDangNhap = txtTenDangNhap.getText();
         String matKhau = String.valueOf(txtMatKhau.getPassword());
         if(banLaAi == null){
+            JOptionPane.showMessageDialog(this,
+                    "Vui lòng chọn người chơi hoặc người quản lý!",
+                    "Thông báo",
+                    JOptionPane.INFORMATION_MESSAGE);
+
             return;
         }
         if(banLaAi.equals("nguoiChoi")){
@@ -203,10 +208,10 @@ public class ManHinhDangNhap extends javax.swing.JFrame {
             NguoiChoi admin = new NguoiChoi();
             NguoiChoi nguoiChoiTimDuoc = admin.soSanhTendnVaMatKhau(tempChoi);
             if(nguoiChoiTimDuoc==null){
-                  JOptionPane.showMessageDialog(this,
-                    "Thông tin đăng nhập không chính xác!",
-                    "Thông báo",
-                    JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this,
+                 "Thông tin đăng nhập không chính xác!",
+                 "Thông báo",
+                 JOptionPane.ERROR_MESSAGE);
             }
             else{
                 nguoiChoiDaDangNhap = nguoiChoiTimDuoc;
@@ -218,11 +223,23 @@ public class ManHinhDangNhap extends javax.swing.JFrame {
             }           
         }
          if(banLaAi.equals("nguoiQuanLy")){
+            NguoiQuanLy tempNguoiQL = new NguoiQuanLy(tenDangNhap,matKhau);
+            NguoiQuanLy admin = new NguoiQuanLy();
+            NguoiQuanLy nguoiQuanLYTimDuoc = admin.soSanhTendnVaMatKhau(tempNguoiQL);
+            if(nguoiQuanLYTimDuoc==null){
+                  JOptionPane.showMessageDialog(this,
+                    "Thông tin đăng nhập không chính xác!",
+                    "Thông báo",
+                    JOptionPane.ERROR_MESSAGE);
+            }
+            else{
                 this.setVisible(false);
-                ManHinhQuyenNguoiQuanLy manHinhQuyenNguoiQuanLy = new ManHinhQuyenNguoiQuanLy();
+                ManHinhQuyenNguoiQuanLy manHinhQuyenNguoiQuanLy = new ManHinhQuyenNguoiQuanLy(nguoiQuanLYTimDuoc);
                 manHinhQuyenNguoiQuanLy.setLocationRelativeTo(null);
                 manHinhQuyenNguoiQuanLy.setVisible(true);
                 this.dispose();
+            }           
+               
          }
     }//GEN-LAST:event_btnDangNhapActionPerformed
 

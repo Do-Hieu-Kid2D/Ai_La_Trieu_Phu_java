@@ -108,8 +108,7 @@ public class ManHinhKhoiDong extends javax.swing.JFrame {
     private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
        
         // Khi người chơi ấn thoát - show 1 dilog hỏi 
-       Object[] options = {"yes", "no"};
-
+        Object[] options = {"yes", "no"};
         int selection = JOptionPane.showOptionDialog(
         this,
         "Bạn có muốn thoát hay không?",
