@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Ki3_53/LapTrinhJava/App_ai_la_Trieuphu/Game-ALTP-java/Game_Ai_La_Trieu_Phu/src/src_View/ManHinhChoiGameThat.java</file>
-            <file>file:/D:/Ki3_53/LapTrinhJava/App_ai_la_Trieuphu/Game-ALTP-java/Game_Ai_La_Trieu_Phu/src/src_View/ManHinhKhoiDong.java</file>
-            <file>file:/D:/Ki3_53/LapTrinhJava/App_ai_la_Trieuphu/Game-ALTP-java/Game_Ai_La_Trieu_Phu/src/src_module/CauHoi.java</file>
-            <file>file:/D:/Ki3_53/LapTrinhJava/App_ai_la_Trieuphu/Game-ALTP-java/Game_Ai_La_Trieu_Phu/src/src_View/ManHinhQuyenMatKhau.java</file>
+            <file>file:/D:/Ki3_53/LapTrinhJava/App_ai_la_Trieuphu/Game-ALTP-java/Game_Ai_La_Trieu_Phu/src/src_View/ManHinhQuyenNguoiQuanLy.java</file>
+            <file>file:/D:/Ki3_53/LapTrinhJava/App_ai_la_Trieuphu/Game-ALTP-java/Game_Ai_La_Trieu_Phu/src/src_module/NguoiQuanLy.java</file>
+            <file>file:/D:/Ki3_53/LapTrinhJava/App_ai_la_Trieuphu/Game-ALTP-java/Game_Ai_La_Trieu_Phu/src/src_View/ManHinhDangNhap.java</file>
         </group>
     </open-files>
 </project-private>

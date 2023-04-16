@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Random;
 
+
 public class CauHoi {
 
     static private String pathFoder = System.getProperty("user.dir")+"\\data_file";
@@ -23,7 +24,9 @@ public class CauHoi {
     private String dapAnSai3;
 
     public CauHoi() {
+        
     }
+    
     public CauHoi(String id, String noiDung, String dapAnDung, String dapAnSai1, String dapAnSai2, String dapAnSai3) {
         this.id = id;
         this.noiDung = noiDung;
@@ -54,7 +57,28 @@ public class CauHoi {
             return false;
         }
     }
-
+    
+    public String soLuongCauHoi(){
+        int soLuong =0;
+        CauHoi admin = new CauHoi();
+        ArrayList<CauHoi> kq = new ArrayList<>();
+        try {
+            FileReader fr = new FileReader(pathFileData);
+            BufferedReader br = new BufferedReader(fr);
+            String line = null;
+            while(true) {
+                line = br.readLine();
+                if(line == null) {
+                    break;
+                }else {
+                    soLuong++;
+                }
+            }
+            return soLuong+"";
+        } catch (Exception e) {
+        }
+        return 0+"";
+    }
     public ArrayList<CauHoi> layTatCaCauHoi(){
         CauHoi admin = new CauHoi();
         ArrayList<CauHoi> kq = new ArrayList<>();
@@ -217,20 +241,13 @@ public class CauHoi {
     }
     
 //    public static void main(String[] args) {
-//	
-//		CauHoi admin = new CauHoi();
-//		CauHoi h = new CauHoi("0", "Ny bạn là ai?", "Thu Hà", "k có", "Kim Liên", "Lệ Quyên");
-//		System.out.println(admin.themMotCauHoi(h));
-//		
-//		//System.out.println(admin.traLoiDung("3", "Thu Hà"));
-//		//admin.xoaMotCauHoi("1");
-//		ArrayList<CauHoi> kq = admin.layTatCaCauHoi();
-//		for (CauHoi cauHoi : kq) {
-//			System.out.println(cauHoi.toString());
-//		}
+////	
+//	CauHoi admin = new CauHoi();
+//        System.err.println(admin.soLuongCauHoi());
+////                
 //		
 //		
 //}
-    
+//    
 
 }

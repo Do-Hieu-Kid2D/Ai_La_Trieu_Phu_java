@@ -175,7 +175,7 @@ public class ManHinhDangKy extends javax.swing.JFrame {
         
         
         // Khi đăng kí thành công 
-        JOptionPane.showMessageDialog(this, "Đăng ký tài khoản thành công!", "Thông báo!", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Đã gửi bản đăng ký tới máy chủ.\n Vui lòng đợi được xác thực!", "Thông báo!", JOptionPane.INFORMATION_MESSAGE);
         this.setVisible(false);
         ManHinhKhoiDong.doiTuongManHinhKhoiDong.setVisible(true);
         this.dispose();

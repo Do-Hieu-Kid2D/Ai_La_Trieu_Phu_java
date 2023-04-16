@@ -102,23 +102,6 @@ public class NguoiChoi {
         return null;
     }
 
-    public void chuyenDoiNguoiChoi(ArrayList<NguoiChoiChuaXacThuc> nguoiChoi) {
-        ArrayList<NguoiChoi> data = new ArrayList<>();
-        NguoiChoi admin = new NguoiChoi();
-        for (NguoiChoiChuaXacThuc item : nguoiChoi) {
-            String tenNguoiChoi = item.getTenNguoiChoi();
-            String tenDangNhap  = item.getTenDangNhap();
-            String matKhau      = item.getMatKhau();
-            String email		 = item.getEmail();
-            int diemSo = 0;
-            data.add(new NguoiChoi(tenNguoiChoi, tenDangNhap, matKhau, email, diemSo));
-        }
-        for (NguoiChoi item : data) {
-                admin.themMotNguoiChoi(item);
-        }
-    }
-    
-
     public boolean xoaMotNguoiChoi(String tenDN) {
         NguoiChoi admin = new NguoiChoi();
         boolean kq = false;
