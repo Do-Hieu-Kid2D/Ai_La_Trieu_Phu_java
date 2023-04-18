@@ -101,7 +101,7 @@ public class FrameTatCaNguoiChoi extends javax.swing.JFrame {
         NguoiChoi admin = new NguoiChoi();
         ArrayList<NguoiChoi> data = admin.layTatCaNguoiChoi();
         for (NguoiChoi nguoiChoi : data) {
-            themMotDongTable(nguoiChoi);
+            this.themMotDongTable(nguoiChoi);
         }
     }
     

@@ -73,6 +73,21 @@ public class NguoiChoi {
         }
         return kq;
     }
+    
+    public NguoiChoi layNguoiChoiQuaTenDN(String tenDN) {
+        NguoiChoi admin = new NguoiChoi();
+        ArrayList<NguoiChoi> data = new ArrayList<>();
+        data = admin.layTatCaNguoiChoi();
+        if(data == null){
+            return null;
+        }
+        for (NguoiChoi item : data) {
+            if(item.getTenDangNhap().equals(tenDN)){
+                return item;
+            }
+        }
+        return null;
+    }
 
     public ArrayList<NguoiChoi> layTatCaNguoiChoi(){
         NguoiChoi admin = new NguoiChoi();

@@ -167,7 +167,7 @@ public class FrameThemNguoiChoi extends javax.swing.JFrame {
         } 
         return true;
     }
-     private void setLaiMau(){
+    private void setLaiMau(){
         labTenDangNhap.setForeground(Color.BLACK);
         labTenNguoiChoi.setForeground(Color.BLACK);
         labMatKhau.setForeground(Color.BLACK);
@@ -182,7 +182,7 @@ public class FrameThemNguoiChoi extends javax.swing.JFrame {
         String email= txtEmail.getText();
          NguoiChoi admin = new NguoiChoi();
         if(this.isLoiKhongDuThongtin(tenNguoiChoi,tenDangNhap,matKhau,email)){
-             JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin", 
+            JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin", 
                  "Thông báo!",JOptionPane.ERROR_MESSAGE);
             }else{
              this.setLaiMau();

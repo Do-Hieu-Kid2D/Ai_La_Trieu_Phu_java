@@ -40,7 +40,8 @@ public class ManHinhKhoiDong extends javax.swing.JFrame {
         panl3NutKhoiDong.setLayout(new java.awt.GridLayout(3, 1, 45, 60));
 
         btnDangNhap.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        btnDangNhap.setText("Đăng Nhập");
+        btnDangNhap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/log-in.png"))); // NOI18N
+        btnDangNhap.setText(" Đăng Nhập");
         btnDangNhap.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDangNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,7 +51,8 @@ public class ManHinhKhoiDong extends javax.swing.JFrame {
         panl3NutKhoiDong.add(btnDangNhap);
 
         btnDangKy.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        btnDangKy.setText("Đăng ký");
+        btnDangKy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/write.png"))); // NOI18N
+        btnDangKy.setText("   Đăng ký");
         btnDangKy.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDangKy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,7 +62,8 @@ public class ManHinhKhoiDong extends javax.swing.JFrame {
         panl3NutKhoiDong.add(btnDangKy);
 
         btnThoat.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        btnThoat.setText("Thoát");
+        btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/switch.png"))); // NOI18N
+        btnThoat.setText("  Thoát");
         btnThoat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnThoat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
