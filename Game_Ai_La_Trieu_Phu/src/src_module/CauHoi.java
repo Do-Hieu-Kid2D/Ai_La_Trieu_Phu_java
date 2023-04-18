@@ -11,9 +11,14 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Random;
 
-
 public class CauHoi {
-
+    static public String[] thangtienThuong_String = {
+        "0", "200.000", "400.000", "600.000", "800.000", "1.000.000", "2.000.000",
+        "3.000.000", "6.000.000", "10.000.000", "14.000.000", "22.000.000", "30.000.000",
+        "40.000.000", "85.000.000", "150.000.000","150.000.000"};
+    static public int[] thangtienThuong_So = {
+        0, 200000, 400000, 600000, 800000, 1000000, 2000000, 3000000, 6000000, 
+        10000000, 14000000, 22000000, 30000000, 40000000, 85000000, 150000000};
     static private String pathFoder = System.getProperty("user.dir")+"\\data_file";
     static private String pathFileData = pathFoder+"\\cauHoi.txt";
     private String id;

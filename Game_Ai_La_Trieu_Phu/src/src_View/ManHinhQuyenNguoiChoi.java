@@ -25,6 +25,7 @@ public class ManHinhQuyenNguoiChoi extends javax.swing.JFrame {
         btnChoiNgay = new javax.swing.JButton();
         btnDangXuat = new javax.swing.JButton();
         btnThoat = new javax.swing.JButton();
+        btnIntu = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         labTenNguoiChoi = new javax.swing.JLabel();
@@ -43,9 +44,10 @@ public class ManHinhQuyenNguoiChoi extends javax.swing.JFrame {
 
         panl3NutKhoiDong.setBackground(new java.awt.Color(0, 0, 0));
         panl3NutKhoiDong.setOpaque(false);
-        panl3NutKhoiDong.setLayout(new java.awt.GridLayout(3, 1, 45, 60));
+        panl3NutKhoiDong.setLayout(new java.awt.GridLayout(4, 1, 45, 60));
 
         btnChoiNgay.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        btnChoiNgay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/go.png"))); // NOI18N
         btnChoiNgay.setText("Chơi Ngay");
         btnChoiNgay.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnChoiNgay.addActionListener(new java.awt.event.ActionListener() {
@@ -56,6 +58,7 @@ public class ManHinhQuyenNguoiChoi extends javax.swing.JFrame {
         panl3NutKhoiDong.add(btnChoiNgay);
 
         btnDangXuat.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        btnDangXuat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/logout.png"))); // NOI18N
         btnDangXuat.setText("Đăng xuất");
         btnDangXuat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDangXuat.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +69,8 @@ public class ManHinhQuyenNguoiChoi extends javax.swing.JFrame {
         panl3NutKhoiDong.add(btnDangXuat);
 
         btnThoat.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        btnThoat.setText("Thoát");
+        btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/switch.png"))); // NOI18N
+        btnThoat.setText(" Thoát");
         btnThoat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnThoat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,7 +79,12 @@ public class ManHinhQuyenNguoiChoi extends javax.swing.JFrame {
         });
         panl3NutKhoiDong.add(btnThoat);
 
-        panlManHinhKhoiDong.add(panl3NutKhoiDong, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 230, 310));
+        btnIntu.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        btnIntu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/personal-information-icon.png"))); // NOI18N
+        btnIntu.setText(" in Tư");
+        panl3NutKhoiDong.add(btnIntu);
+
+        panlManHinhKhoiDong.add(panl3NutKhoiDong, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 230, 410));
 
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -162,6 +171,7 @@ public class ManHinhQuyenNguoiChoi extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChoiNgay;
     private javax.swing.JButton btnDangXuat;
+    private javax.swing.JButton btnIntu;
     private javax.swing.JButton btnThoat;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

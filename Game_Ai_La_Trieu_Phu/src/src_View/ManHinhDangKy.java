@@ -2,11 +2,13 @@
 package src_View;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import javax.swing.JOptionPane;
+import src_module.*;
 
 public class ManHinhDangKy extends javax.swing.JFrame {
 
-
+    NguoiChoi admin = new NguoiChoi();
     public ManHinhDangKy() {
         initComponents();
     }
@@ -23,19 +25,19 @@ public class ManHinhDangKy extends javax.swing.JFrame {
         lablehuDangNHap = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jtxtTenDangNhap = new javax.swing.JTextField();
-        jtxtMatKhauNhapLai = new javax.swing.JPasswordField();
+        labTenDangNhap = new javax.swing.JLabel();
+        labMatKhauNhapLai = new javax.swing.JLabel();
+        txtTenDangNhap = new javax.swing.JTextField();
+        txtMatKhauNhapLai = new javax.swing.JPasswordField();
         btnDangKy = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         labDangNhap = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jtxtMatKhau = new javax.swing.JPasswordField();
+        labMatKhau = new javax.swing.JLabel();
+        txtMatKhau = new javax.swing.JPasswordField();
         txtEmail = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        labEmail = new javax.swing.JLabel();
+        labTenCuaBan = new javax.swing.JLabel();
         txtTenCuaBan = new javax.swing.JTextField();
         labNenManKhoiDong = new javax.swing.JLabel();
 
@@ -60,7 +62,7 @@ public class ManHinhDangKy extends javax.swing.JFrame {
         });
         panlManHinhDangNhap.add(btnQuayLai, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, 40, 30));
 
-        panDangNhap.setBackground(new java.awt.Color(255, 255, 255));
+        panDangNhap.setBackground(new java.awt.Color(204, 255, 204));
         panDangNhap.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panlChuDangNhap.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -86,24 +88,25 @@ public class ManHinhDangKy extends javax.swing.JFrame {
         jPanel1.setToolTipText("");
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel1.setText("Tên đăng nhập:");
-        jLabel1.setToolTipText("");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 120, 30));
+        labTenDangNhap.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labTenDangNhap.setText("Tên đăng nhập:");
+        labTenDangNhap.setToolTipText("");
+        jPanel1.add(labTenDangNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 120, 30));
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel2.setText("Nhập lại mật khẩu:");
-        jLabel2.setToolTipText("");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 140, 20));
+        labMatKhauNhapLai.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labMatKhauNhapLai.setText("Nhập lại mật khẩu:");
+        labMatKhauNhapLai.setToolTipText("");
+        jPanel1.add(labMatKhauNhapLai, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 140, 20));
 
-        jtxtTenDangNhap.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jPanel1.add(jtxtTenDangNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 320, 30));
+        txtTenDangNhap.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jPanel1.add(txtTenDangNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 320, 30));
 
-        jtxtMatKhauNhapLai.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jPanel1.add(jtxtMatKhauNhapLai, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 320, 30));
+        txtMatKhauNhapLai.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jPanel1.add(txtMatKhauNhapLai, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 320, 30));
 
         btnDangKy.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
-        btnDangKy.setText("ĐĂNG KÝ");
+        btnDangKy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/write.png"))); // NOI18N
+        btnDangKy.setText(" ĐĂNG KÝ");
         btnDangKy.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDangKy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,26 +132,26 @@ public class ManHinhDangKy extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 270, 30));
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel3.setText("Mật khẩu:");
-        jLabel3.setToolTipText("");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 110, 20));
+        labMatKhau.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labMatKhau.setText("Mật khẩu:");
+        labMatKhau.setToolTipText("");
+        jPanel1.add(labMatKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 110, 20));
 
-        jtxtMatKhau.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jPanel1.add(jtxtMatKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 320, 30));
+        txtMatKhau.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jPanel1.add(txtMatKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 320, 30));
 
         txtEmail.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 320, 30));
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel5.setText("Email:");
-        jLabel5.setToolTipText("");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 120, 30));
+        labEmail.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labEmail.setText("Email:");
+        labEmail.setToolTipText("");
+        jPanel1.add(labEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 120, 30));
 
-        jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel6.setText("Tên của bạn:");
-        jLabel6.setToolTipText("");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 120, 30));
+        labTenCuaBan.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        labTenCuaBan.setText("Tên của bạn:");
+        labTenCuaBan.setToolTipText("");
+        jPanel1.add(labTenCuaBan, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 120, 30));
 
         txtTenCuaBan.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jPanel1.add(txtTenCuaBan, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 320, 30));
@@ -168,31 +171,119 @@ public class ManHinhDangKy extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+        private boolean isLoiKhongDuThongtin(String tenNguoiChoi, String tenDangNhap,String matKhau, String matKhauNhapLai, String Email){
+            if(tenNguoiChoi.equals("") || tenDangNhap.equals("")|| matKhau.equals("") 
+                    || matKhauNhapLai.equals("") || Email.equals("")){
 
+                if(tenNguoiChoi.equals("")){
+                    labTenCuaBan.setForeground(Color.red);
+                }else{
+                    labTenCuaBan.setForeground(Color.BLACK);
+                }
+                if(tenDangNhap.equals("")){
+                    labTenDangNhap.setForeground(Color.red);
+                }else{
+                    labTenDangNhap.setForeground(Color.BLACK);
+                }
+                if(matKhau.equals("")){
+                    labMatKhau.setForeground(Color.red);
+                }else{
+                    labMatKhau.setForeground(Color.BLACK);
+                }
+                if(matKhauNhapLai.equals("")){
+                    labMatKhauNhapLai.setForeground(Color.red);
+                }else{
+                    labMatKhauNhapLai.setForeground(Color.BLACK);
+                }
+                if(Email.equals("")){
+                    labEmail.setForeground(Color.red);
+                }else{
+                    labEmail.setForeground(Color.BLACK);
+                }  
+
+                txtTenCuaBan.setText(tenNguoiChoi);
+                txtTenDangNhap.setText(tenDangNhap);
+                txtMatKhau.setText(matKhau);
+                txtMatKhauNhapLai.setText(matKhauNhapLai);
+                txtEmail.setText(Email);
+                return true;
+                }
+            return false;
+        }
+        private void setLaiMau(){
+            labTenDangNhap.setForeground(Color.BLACK);
+            labTenCuaBan.setForeground(Color.BLACK);
+            labMatKhau.setForeground(Color.BLACK);
+            labMatKhauNhapLai.setForeground(Color.BLACK);
+            labEmail.setForeground(Color.BLACK);
+        }
+        private boolean checkFomatEmail(String email){
+       
+        CheckInputEmail admin = new CheckInputEmail();
+        if(!admin.validate(email.trim())) {
+            labEmail.setForeground(Color.red);
+            JOptionPane.showMessageDialog(this, "Email không đúng định dạng!", 
+                 "Thông báo!",JOptionPane.ERROR_MESSAGE);
+            return false;  
+        } 
+        return true;
+    }
+    
     private void btnDangKyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangKyActionPerformed
         
         // Check các thông tin khi nhập vào xem đúng fomat không?.....
+        boolean flag = false;
+        String tenNguoiChoi = txtTenCuaBan.getText();
+        String tenDangNhap = txtTenDangNhap.getText();
+        String matKhau =String.valueOf(txtMatKhau.getPassword());
+        String matKhauNhapLai =String.valueOf(txtMatKhauNhapLai.getPassword());
+        String email = txtEmail.getText();
+        if(this.isLoiKhongDuThongtin(tenNguoiChoi, tenDangNhap, matKhau, matKhauNhapLai, email)){
+             JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin", 
+                 "Thông báo!",JOptionPane.ERROR_MESSAGE);
+        }else{
+            this.setLaiMau(); 
+        }
+        if(!this.isLoiKhongDuThongtin(tenNguoiChoi,tenDangNhap,matKhau, matKhauNhapLai,email)){
+             if(admin.nguoiChoiCoTonTaiHayKhong(tenDangNhap)){
+                labTenDangNhap.setForeground(Color.red);
+                JOptionPane.showMessageDialog(this, "Người chơi " + tenDangNhap +" đã tồn tại!", 
+                     "Thông báo!",JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        if(!this.isLoiKhongDuThongtin(tenNguoiChoi,tenDangNhap,matKhau, matKhauNhapLai,email)){
+            if(!matKhau.equals(matKhauNhapLai) && !admin.nguoiChoiCoTonTaiHayKhong(tenDangNhap)){
+                labMatKhauNhapLai.setForeground(Color.red);
+                JOptionPane.showMessageDialog(this, "Mật khẩu nhập lại không đúng!", 
+                         "Thông báo!",JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        if(!this.isLoiKhongDuThongtin(tenNguoiChoi,tenDangNhap,matKhau, matKhauNhapLai,email)){
+           if(matKhau.equals(matKhauNhapLai) && !admin.nguoiChoiCoTonTaiHayKhong(tenDangNhap)){
+                 flag = this.checkFomatEmail(email); 
+            }
+        }
         
-        
-        // Khi đăng kí thành công 
-        JOptionPane.showMessageDialog(this, "Đã gửi bản đăng ký tới máy chủ.\n Vui lòng đợi được xác thực!", "Thông báo!", JOptionPane.INFORMATION_MESSAGE);
-        this.setVisible(false);
-        ManHinhKhoiDong.doiTuongManHinhKhoiDong.setVisible(true);
-        this.dispose();
+        // Bắt hết lỗi rồi thì mới đẩy thông tin đi để đợi xác nhận nưa!! :((
+        if(flag){
+            NguoiChoiChuaXacThuc adminChuaXacThuc = new NguoiChoiChuaXacThuc();
+            NguoiChoiChuaXacThuc temp = new NguoiChoiChuaXacThuc(tenNguoiChoi, tenDangNhap, matKhau, email, false);
+            adminChuaXacThuc.themMotNguoiChoiCXT(temp);
+            JOptionPane.showMessageDialog(this, "Đã gửi bản đăng ký tới máy chủ.\n Vui lòng đợi được xác thực!", "Thông báo!", JOptionPane.INFORMATION_MESSAGE);
+            this.setVisible(false);
+            ManHinhKhoiDong.doiTuongManHinhKhoiDong.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnDangKyActionPerformed
 
     private void btnQuayLaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuayLaiActionPerformed
-       
-        // Khi muốn quay lại thì ấn nút này!
        this.setVisible(false);
        ManHinhKhoiDong.doiTuongManHinhKhoiDong.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_btnQuayLaiActionPerformed
 
     private void labDangNhapMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labDangNhapMousePressed
-       
-        // Không đăng ký nữa -> ấn "lab đăng nhập" -> sang màn đăng nhập
-        
+   
         ManHinhDangNhap manHinhDangNhap = new ManHinhDangNhap();
         manHinhDangNhap.setLocationRelativeTo(null);
         manHinhDangNhap.setVisible(true);
@@ -206,25 +297,25 @@ public class ManHinhDangKy extends javax.swing.JFrame {
     private javax.swing.JButton btnDangKy;
     private javax.swing.JButton btnQuayLai;
     private javax.swing.ButtonGroup groupLoaiNguoiChoi;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JPasswordField jtxtMatKhau;
-    private javax.swing.JPasswordField jtxtMatKhauNhapLai;
-    private javax.swing.JTextField jtxtTenDangNhap;
     private javax.swing.JLabel labDangNhap;
+    private javax.swing.JLabel labEmail;
+    private javax.swing.JLabel labMatKhau;
+    private javax.swing.JLabel labMatKhauNhapLai;
     private javax.swing.JLabel labNenManKhoiDong;
+    private javax.swing.JLabel labTenCuaBan;
+    private javax.swing.JLabel labTenDangNhap;
     private javax.swing.JLabel lablehuDangNHap;
     private javax.swing.JPanel panDangNhap;
     private javax.swing.JPanel panlChuDangNhap;
     private javax.swing.JPanel panlManHinhDangNhap;
     private javax.swing.JTextField txtEmail;
+    private javax.swing.JPasswordField txtMatKhau;
+    private javax.swing.JPasswordField txtMatKhauNhapLai;
     private javax.swing.JTextField txtTenCuaBan;
+    private javax.swing.JTextField txtTenDangNhap;
     // End of variables declaration//GEN-END:variables
 }

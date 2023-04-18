@@ -61,15 +61,7 @@ public class NguoiQuanLy {
         return kq;		
     }
     
-    public static void main(String[] args) {
-        
-        NguoiQuanLy admin = new NguoiQuanLy();
-        NguoiQuanLy n = new NguoiQuanLy("Hiếu_admin","hieuad","123");
-        NguoiQuanLy c = admin.soSanhTendnVaMatKhau(n);
-        System.err.println(c.getTenNguoiQuanLy());
-
-//            }
-    }
+   
 
     public ArrayList<NguoiQuanLy> layTatCaNguoiQuanLy(){
         NguoiQuanLy admin = new NguoiQuanLy();

@@ -61,7 +61,7 @@ public class ManHinhDangNhap extends javax.swing.JFrame {
         });
         panlManHinhDangNhap.add(btnQuayLai, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, 40, 30));
 
-        panDangNhap.setBackground(new java.awt.Color(255, 255, 255));
+        panDangNhap.setBackground(new java.awt.Color(204, 255, 204));
         panDangNhap.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panlChuDangNhap.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -116,7 +116,8 @@ public class ManHinhDangNhap extends javax.swing.JFrame {
         jPanel1.add(labQuyenMatKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 110, -1));
 
         btnDangNhap.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
-        btnDangNhap.setText("ĐĂNG NHẬP");
+        btnDangNhap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/log-in.png"))); // NOI18N
+        btnDangNhap.setText(" ĐĂNG NHẬP");
         btnDangNhap.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDangNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

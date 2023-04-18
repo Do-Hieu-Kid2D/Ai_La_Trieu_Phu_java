@@ -1,4 +1,2 @@
-0    cau 1    f    f    f    f
-1    f    fcd     re     wec    fwr
-2    shngfd    sdfbgnm    dfsgh    fghj    sdfg
-3    Test admin thêm câu hỏi     a     b     v    c
+0    Câu 1    đúng    sai    sai    sai
+1    Câu 2:     Đ    S    S    S

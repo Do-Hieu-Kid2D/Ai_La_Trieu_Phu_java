@@ -48,6 +48,7 @@ public class ManHinhChoiGameChacChua extends javax.swing.JFrame {
         panlManHinhDangNhap.setPreferredSize(new java.awt.Dimension(1000, 560));
         panlManHinhDangNhap.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        panSanSangChua.setBackground(new java.awt.Color(255, 255, 204));
         panSanSangChua.setToolTipText("");
         panSanSangChua.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
