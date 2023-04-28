@@ -98,11 +98,9 @@ public class ManHinhDangNhap extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 110, 20));
 
         txtTenDangNhap.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        txtTenDangNhap.setText("hieu");
         jPanel1.add(txtTenDangNhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 320, 40));
 
         txtMatKhau.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        txtMatKhau.setText("123");
         jPanel1.add(txtMatKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 320, 40));
 
         labQuyenMatKhau.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N

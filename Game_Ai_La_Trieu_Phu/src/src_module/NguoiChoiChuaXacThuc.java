@@ -4,19 +4,11 @@ package src_module;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.List;
 
 public class NguoiChoiChuaXacThuc {
     static private String pathFoder = System.getProperty("user.dir")+"\\data_file";
@@ -86,7 +78,7 @@ public class NguoiChoiChuaXacThuc {
 
             ArrayList<NguoiChoiChuaXacThuc> kq = new ArrayList<>();
             String line = null;
-            FileReader fr = new FileReader(pathFileData);
+            FileReader fr = new FileReader(pathFileData,StandardCharsets.UTF_8);
             BufferedReader bf = new BufferedReader(fr);
 
             while(true) {

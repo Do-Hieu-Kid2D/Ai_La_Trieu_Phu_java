@@ -1,27 +1,27 @@
 package src_View;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.event.FocusEvent;
-import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Random;
-import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import javax.swing.colorchooser.AbstractColorChooserPanel;
 import src_module.NguoiChoi;
 import src_module.CauHoi;
 import src_module.PhatNhac;
 
+;
+
 public class ManHinhChoiGameThat extends javax.swing.JFrame {
 
+    String workingDir = System.getProperty("user.dir");
+    String pathFile = workingDir + "\\Sound\\kcgt.wav";
     NguoiChoi adminNguoiChoi;
     CauHoi admindCauHoi;
     NguoiChoi nguoiChoiHienTai;
@@ -33,7 +33,7 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
     Color colorDung;
     Color colorSai;
     Color colorBorder;
-    int soCauDaVuotQua = 0;
+    int soCauDaVuotQua;
     boolean lockA;
     boolean lockB;
     boolean lockC;
@@ -44,6 +44,9 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
     ArrayList<JLabel> thangTien = new ArrayList<>();
     SimpleDateFormat timeFormat;
     SimpleDateFormat dateFormat;
+    Thread tVip;
+    ArrayList<CauHoi> data ;
+    List<CauHoi> listCauHoi = new ArrayList<>();
 
     @SuppressWarnings("empty-statement")
     public ManHinhChoiGameThat(NguoiChoi nguoiChoiThat) {
@@ -54,7 +57,6 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
         nguoiChoiHienTai = nguoiChoiThat;
         labTenNguoiChoi.setText(nguoiChoiHienTai.getTenNguoiChoi());
         admindCauHoi = new CauHoi();
-        this.taiCauHoiLen();
         colorMoveEdit = labGetColor.getBackground();
         colorDefault = labNoiDungCauHoi.getBackground();
         colorSai = lbvien.getBackground();
@@ -67,6 +69,20 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
         this.setLaiBoder();
         timeFormat = new SimpleDateFormat("hh:mm:ss");
         dateFormat = new SimpleDateFormat("EEE, dd-MM-YYYY");
+        soCauDaVuotQua =0;
+//        tVip = new Thread(new Runnable() {
+//            public void run() {
+//                try {
+//                    PhatNhac p = new PhatNhac();
+//                    p.lenNhacChoiGame();
+//                    if (Thread.currentThread().isInterrupted()) {
+//                        tVip.join();
+//                    }
+//                } catch (Exception e) {
+//                }
+//            }
+//        });
+//        tVip.start();
 
         new java.util.Timer().schedule(new TimerTask() {
             @Override
@@ -78,11 +94,7 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
             }
         }, 1, 1000);
 
-        try {
-            PhatNhac n = new PhatNhac();
-            n.phatNhacdvn();
-        } catch (Exception e) {
-        }
+        this.taiCauHoiLen();
     }
 
     @SuppressWarnings("unchecked")
@@ -496,7 +508,7 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
 
         panCauHoi.add(panCauTraLoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 530, 150));
 
-        panlManHinhChoiGameThat.add(panCauHoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 630, 320));
+        panlManHinhChoiGameThat.add(panCauHoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 620, 320));
 
         lbvien.setBackground(new java.awt.Color(255, 102, 0));
         lbvien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/clock-icon.png"))); // NOI18N
@@ -528,8 +540,21 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
     }//GEN-LAST:event_labCauAMouseClicked
 
     public void luuNguoiChoiXuong() {
+        int soTien = 0;
+        if (soCauDaVuotQua < 5) {
+            soTien = 000;
+        }
+        if (soCauDaVuotQua < 10 && soCauDaVuotQua >= 5) {
+            soTien = 1000000;
+        }
+        if (soCauDaVuotQua < 15 && soCauDaVuotQua >= 10) {
+            soTien = 14000000;
+        }
+        if (soCauDaVuotQua == 15) {
+            soTien = 150000000;
+        }
         NguoiChoi nguoiThang = new NguoiChoi(nguoiChoiHienTai.getTenNguoiChoi(), nguoiChoiHienTai.getTenDangNhap(),
-                nguoiChoiHienTai.getMatKhau(), nguoiChoiHienTai.getEmail(), SoTienDangCo_So);
+                nguoiChoiHienTai.getMatKhau(), nguoiChoiHienTai.getEmail(), soTien);
         adminNguoiChoi.xoaMotNguoiChoi(nguoiThang.getTenDangNhap());
         adminNguoiChoi.themMotNguoiChoi(nguoiThang);
     }
@@ -645,6 +670,7 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(rootPane,
                 "Người thân đã trợ giúp cho bạn câu trả lời là:\n   " + troGiup,
                 "Thông báo!", JOptionPane.INFORMATION_MESSAGE);
+        btnCall.setEnabled(false);
     }//GEN-LAST:event_btnCallActionPerformed
 
     private void labCauCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labCauCMouseClicked
@@ -669,12 +695,23 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
                 options[0]
         );
         if (selection == 0) {
-            this.luuNguoiChoiXuong();
+            Thread t1 = new Thread(new Runnable() {
+                public void run() {
+                    try {
+                        PhatNhac p = new PhatNhac();
+                        p.lenNhacKetThucSai();
+                    } catch (Exception e) {
+                    }
+                }
+            });
+            t1.start();
+            NguoiChoi nguoiThang = new NguoiChoi(nguoiChoiHienTai.getTenNguoiChoi(), nguoiChoiHienTai.getTenDangNhap(),
+                    nguoiChoiHienTai.getMatKhau(), nguoiChoiHienTai.getEmail(), SoTienDangCo_So);
+            adminNguoiChoi.xoaMotNguoiChoi(nguoiThang.getTenDangNhap());
+            adminNguoiChoi.themMotNguoiChoi(nguoiThang);
             this.setLaiCVaD();
             this.dungCuocChoiRoi(false);
             if (!trieuPhu.isDisplayable()) {
-                this.setVisible(false);
-                this.dispose();
             }
         } else {
             return;
@@ -704,31 +741,57 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
             soTienDangCo_String = admindCauHoi.thangtienThuong_String[soCauDaVuotQua];
             SoTienDangCo_So = admindCauHoi.thangtienThuong_So[soCauDaVuotQua];
             if (soCauDaVuotQua < 15) {
+                Thread t1 = new Thread(new Runnable() {
+                    public void run() {
+                        try {
+                            PhatNhac p = new PhatNhac();
+                            p.lenNhacVoTay();
+                        } catch (Exception e) {
+                        }
+                    }
+                });
+                t1.start();
                 JOptionPane.showMessageDialog(rootPane, "Câu trả lời CHÍNH XÁC! \nChúc mừng bạn đã vượt qua câu hỏi số " + soCauDaVuotQua,
                         "Thông báo", JOptionPane.INFORMATION_MESSAGE);
             }
             this.hienThiTien();
             if (soCauDaVuotQua == 15) {
+                Thread t1 = new Thread(new Runnable() {
+                    public void run() {
+                        try {
+                            PhatNhac p = new PhatNhac();
+                            p.lenNhacWin150();
+                        } catch (Exception e) {
+                        }
+                    }
+                });
+                t1.start();
                 this.luuNguoiChoiXuong();
                 this.setLaiCVaD();
                 this.banLaTrieuPhu();
                 if (!trieuPhu.isDisplayable()) {
-                    this.setVisible(false);
-                    this.dispose();
                 }
             }
-            this.taiCauHoiLen();
-            this.setMauThangCauHoi();
-            this.cotMocQuanTrong();
+            if (soCauDaVuotQua < 15) {
+                this.taiCauHoiLen();
+                this.setMauThangCauHoi();
+                this.cotMocQuanTrong();
+            }
         } else {
-            // SAI 
-            labCauA.setBackground(colorSai);
+            Thread t1 = new Thread(new Runnable() {
+                public void run() {
+                    try {
+                        PhatNhac p = new PhatNhac();
+                        p.lenNhacKetThucSai();
+                    } catch (Exception e) {
+                    }
+                }
+            });
+            t1.start();
             this.luuNguoiChoiXuong();
             this.setLaiCVaD();
             this.dungCuocChoiRoi(true);
             if (!trieuPhu.isDisplayable()) {
-                this.setVisible(false);
-                this.dispose();
             }
         }
     }
@@ -790,11 +853,12 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
     protected void processFocusEvent(FocusEvent e) {
         super.processFocusEvent(e); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
-    
-    private void setLaiCVaD(){
+
+    private void setLaiCVaD() {
         labCauC.setText("");
         labCauD.setText("");
     }
+
     public static void canGiuaTXTLable(JLabel lb) {
         // Hàm này để căn giữa chữ cho TXT trong lable
         lb.setHorizontalAlignment(SwingConstants.CENTER);
@@ -824,10 +888,32 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
         chuaTrieuPhu.setVisible(true);
         chuaTrieuPhu.setLocationRelativeTo(null);
     }
+    
+    public CauHoi randomCauHoi() {
+        CauHoi h = new CauHoi();
+        List<CauHoi> listTam = new ArrayList<>();
+        Random rd = new Random();
+        int so = rd.nextInt(0, listCauHoi.size());
+
+        for(int i = 0; i< listCauHoi.size();i++){
+            if(so==i){
+                h=listCauHoi.get(i);
+                listCauHoi.remove(i);
+                return h;
+            }
+        }
+        return h;
+    }
 
     public void taiCauHoiLen() {
+        if(soCauDaVuotQua==0){
+            data = admindCauHoi.layTatCaCauHoi();
+            for (CauHoi item: data ) {
+                listCauHoi.add(item);
+            }
+        }
         lockA = lockB = lockC = lockD = false;
-        cauHoiHienTai = admindCauHoi.randomCauHoi();
+        cauHoiHienTai = this.randomCauHoi();
         String noiDung = cauHoiHienTai.getNoiDung();
         String dapAnDung = cauHoiHienTai.getDapAnDung();
         String dapAnSai1 = cauHoiHienTai.getDapAnSai1();
@@ -868,7 +954,6 @@ public class ManHinhChoiGameThat extends javax.swing.JFrame {
 //        m.setVisible(true);
 //        m.setLocationRelativeTo(null);
 //    }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn5050;

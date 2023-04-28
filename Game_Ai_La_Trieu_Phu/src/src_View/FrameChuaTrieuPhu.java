@@ -24,7 +24,7 @@ public class FrameChuaTrieuPhu extends javax.swing.JFrame {
                 this.labTienThuong.setText(tienKhiTraLoiSai);
             }
             if (soCauDaVuotQua >= 5 && soCauDaVuotQua < 10) {
-                tienKhiTraLoiSai = "1000.000 VNĐ";
+                tienKhiTraLoiSai = "1.000.000 VNĐ";
                 this.labTienThuong.setText(tienKhiTraLoiSai);
             }
             if (soCauDaVuotQua >= 10 && soCauDaVuotQua < 15) {

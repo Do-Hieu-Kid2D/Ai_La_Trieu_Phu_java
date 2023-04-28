@@ -1,4 +1,3 @@
-
 package src_View;
 
 import java.util.Timer;
@@ -10,18 +9,18 @@ import javax.lang.model.util.ElementScanner14;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import src_module.NguoiChoi;
-
+import src_module.*;
 
 public class ManHinhChoiGameChacChua extends javax.swing.JFrame {
-
+    
     NguoiChoi nguoiChoiDaDangNhap;
+    
     public ManHinhChoiGameChacChua(NguoiChoi nguoiChoiThat) {
         initComponents();
         nguoiChoiDaDangNhap = nguoiChoiThat;
         
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -87,7 +86,7 @@ public class ManHinhChoiGameChacChua extends javax.swing.JFrame {
         panlManHinhDangNhap.add(panSanSangChua, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 420, 190));
 
         labNenManKhoiDong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/anhChoigame.jpg"))); // NOI18N
-        panlManHinhDangNhap.add(labNenManKhoiDong, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 560));
+        panlManHinhDangNhap.add(labNenManKhoiDong, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1010, 560));
         labNenManKhoiDong.getAccessibleContext().setAccessibleName("lableNenKhoiDong");
 
         getContentPane().add(panlManHinhDangNhap);
@@ -95,42 +94,53 @@ public class ManHinhChoiGameChacChua extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public static void nhapNhay(JPanel pn) {
+        pn.setVisible(false);
+        Timer timer = new Timer();
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                pn.setVisible(true);
+            }
+        };
+        timer.schedule(task, 500);
+    }
     
-public static void nhapNhay(JPanel pn){
-    pn.setVisible(false);
-    Timer timer = new Timer();	
-    TimerTask task = new TimerTask() {
-        @Override
-        public void run() {
-             pn.setVisible(true);
-        }
-    };
-    timer.schedule(task, 500);
-}
-
-
 
     private void btnSanSangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSanSangActionPerformed
-       
-        String cmd = evt.getActionCommand(); 
         
-        if(cmd.equals("Đợi xíu!")){
+        String cmd = evt.getActionCommand();
+        if (cmd.equals("Đợi xíu!")) {
             // Khi đợi xíu - gọi hàm nhấp nháy để nháy cái pan câu hỏi này 0,5s
             this.nhapNhay(panSanSangChua);
-        }       
+        }
         
-       if(cmd.equals("Sẵn sàng")){  
+        if (cmd.equals("Sẵn sàng")) {
+            
+            // Sẵn sàng thì vào màn chơi game chính:
+            Thread t1 = new Thread(new Runnable() {
+                public void run() {
+                    try {
+                        PhatNhac p = new PhatNhac();
+                        p.lenNhacVaoGame();
+                    } catch (Exception e) {
+                    }
+                }
+            });
+            t1.start();
+            ManHinhChoiGameThat manHinhChoiGameThat = new ManHinhChoiGameThat(nguoiChoiDaDangNhap);
+            manHinhChoiGameThat.setLocationRelativeTo(null);
            
-        // Sẵn sàng thì vào màn chơi game chính:
-        this.setVisible(false);
-        ManHinhChoiGameThat manHinhChoiGameThat = new ManHinhChoiGameThat(nguoiChoiDaDangNhap);
-        manHinhChoiGameThat.setLocationRelativeTo(null);
-        manHinhChoiGameThat.setVisible(true);
+            try {
+                Thread.sleep(4000);
+            } catch (Exception e) {
+            }
+            this.setVisible(false);
+            manHinhChoiGameThat.setVisible(true);
+            // And xóa cái cũ đi.
+            this.dispose();
+        }
 
-        // And xóa cái cũ đi.
-        this.dispose();
-       }
-  
     }//GEN-LAST:event_btnSanSangActionPerformed
 
 

@@ -40,6 +40,7 @@ public class FrameTrieuPhu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Ai Là Trệu Phú");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel2.setOpaque(false);

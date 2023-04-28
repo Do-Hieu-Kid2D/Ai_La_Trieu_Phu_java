@@ -1,1 +1,2 @@
 Hiếu_admin  hieuad  123
+Admin_Global  admin  123
