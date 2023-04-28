@@ -1,20 +1,17 @@
-
 package src_View;
 
 import javax.swing.JOptionPane;
-import  src_module.NguoiChoi;
-
+import src_module.NguoiChoi;
 
 public class ManHinhQuyenNguoiChoi extends javax.swing.JFrame {
-    
+
     NguoiChoi nguoiChoiDaDangNhap;
 
-    public ManHinhQuyenNguoiChoi( NguoiChoi nguoiChoiThat) {
+    public ManHinhQuyenNguoiChoi(NguoiChoi nguoiChoiThat) {
         initComponents();
         nguoiChoiDaDangNhap = nguoiChoiThat;
-        labTenNguoiChoi.setText(nguoiChoiDaDangNhap.getTenNguoiChoi()); 
+        labTenNguoiChoi.setText(nguoiChoiDaDangNhap.getTenNguoiChoi());
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -82,6 +79,12 @@ public class ManHinhQuyenNguoiChoi extends javax.swing.JFrame {
         btnIntu.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         btnIntu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon_img/personal-information-icon.png"))); // NOI18N
         btnIntu.setText(" in Tư");
+        btnIntu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnIntu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIntuActionPerformed(evt);
+            }
+        });
         panl3NutKhoiDong.add(btnIntu);
 
         panlManHinhKhoiDong.add(panl3NutKhoiDong, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 230, 410));
@@ -113,59 +116,66 @@ public class ManHinhQuyenNguoiChoi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuatActionPerformed
-        
+
         // Người chơi muốn đăng xuất -> hỏi kỹ lại
         // Đăng xuất thì gọi thằng PaPa lên
-        
         Object[] options = {"yes", "no"};
         int selection = JOptionPane.showOptionDialog(
-        this,
-        "Bạn có muốn đăng xuất hay không?",
-        "Thông báo!",
-        JOptionPane.YES_NO_OPTION,
-        JOptionPane.QUESTION_MESSAGE,
-        null,
-        options,
-        options[0]
+                this,
+                "Bạn có muốn đăng xuất hay không?",
+                "Thông báo!",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                options[0]
         );
-        if(selection == 0){
+        if (selection == 0) {
             ManHinhKhoiDong.doiTuongManHinhKhoiDong.setVisible(true);
             this.dispose();
-        }else{
+        } else {
             return;
         }
     }//GEN-LAST:event_btnDangXuatActionPerformed
 
     private void btnChoiNgayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChoiNgayActionPerformed
-        
+
         // Khi người chơi chọn "chơi ngay" thì gọi màn chắc chưa để zui zẻ!
         ManHinhChoiGameChacChua manHinhChoiGame = new ManHinhChoiGameChacChua(nguoiChoiDaDangNhap);
         manHinhChoiGame.setLocationRelativeTo(null);
         manHinhChoiGame.setVisible(true);
-        this.dispose();      
+        this.dispose();
     }//GEN-LAST:event_btnChoiNgayActionPerformed
 
     private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
-      
+
         // Khi người chơi ấn thoát - show 1 dilog hỏi 
         // Thoát khác với đăng xuất là THOÁT -> đóng chương trình luôn 
         Object[] options = {"yes", "no"};
 
         int selection = JOptionPane.showOptionDialog(
-        this,
-        "Bạn có muốn thoát hay không?",
-        "Thông báo!",
-        JOptionPane.YES_NO_OPTION,
-        JOptionPane.QUESTION_MESSAGE,
-        null,
-        options,
-        options[0]
+                this,
+                "Bạn có muốn thoát hay không?",
+                "Thông báo!",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                options[0]
         );
-        if(selection == 0){
+        if (selection == 0) {
             this.setVisible(false);
-            this.dispose(); 
+            this.dispose();
         }
     }//GEN-LAST:event_btnThoatActionPerformed
+
+    private void btnIntuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIntuActionPerformed
+        InfoNguoiChoi ifo = new InfoNguoiChoi(nguoiChoiDaDangNhap);
+        this.setVisible(false);
+        ifo.setLocationRelativeTo(null);
+        ifo.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnIntuActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

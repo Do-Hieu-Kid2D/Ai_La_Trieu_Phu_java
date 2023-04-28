@@ -8,7 +8,7 @@
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
 <project name="Game_Ai_La_Trieu_Phu_Java" default="default" basedir=".">
-    <description>Builds, tests, and runs the project Game_Ai_La_Trieu_Phu_Java.</description>
+    <description>Builds, tests, and runs the Do Hieu "WAE Kid2D".</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 

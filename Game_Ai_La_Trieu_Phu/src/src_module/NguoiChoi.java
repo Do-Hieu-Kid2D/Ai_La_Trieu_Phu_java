@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class NguoiChoi {
@@ -93,7 +94,7 @@ public class NguoiChoi {
         NguoiChoi admin = new NguoiChoi();
         ArrayList<NguoiChoi> kq = new ArrayList<>();
         try {
-            FileReader fr = new FileReader(pathFileData);
+            FileReader fr = new FileReader(pathFileData,StandardCharsets.UTF_8);
             BufferedReader br = new BufferedReader(fr);
             String line = null;
             while(true) {

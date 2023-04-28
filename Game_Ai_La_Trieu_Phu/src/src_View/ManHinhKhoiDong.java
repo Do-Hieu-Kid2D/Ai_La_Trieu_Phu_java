@@ -1,17 +1,14 @@
-
 package src_View;
 
 import javax.swing.JOptionPane;
 
-
 public class ManHinhKhoiDong extends javax.swing.JFrame {
-    
+
     public static ManHinhKhoiDong doiTuongManHinhKhoiDong;
 
     public ManHinhKhoiDong() {
         initComponents();
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -88,53 +85,54 @@ public class ManHinhKhoiDong extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDangKyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangKyActionPerformed
-        
+
         //Ấn vào nút đăng ký -> ẩn màn chính đi
         doiTuongManHinhKhoiDong.setVisible(false);
         // gọi màn hình đăng ký lên
         ManHinhDangKy doituongManHinhDangKy = new ManHinhDangKy();
         doituongManHinhDangKy.setLocationRelativeTo(null);
         doituongManHinhDangKy.setVisible(true);
-        
+
+
     }//GEN-LAST:event_btnDangKyActionPerformed
 
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
-        
+
         // Tương tự với đăng ký - đây là đăng nhập
         doiTuongManHinhKhoiDong.setVisible(false);
         ManHinhDangNhap doiTuongManHinhDangKy = new ManHinhDangNhap();
         doiTuongManHinhDangKy.setLocationRelativeTo(null);
         doiTuongManHinhDangKy.setVisible(true);
-        
+
     }//GEN-LAST:event_btnDangNhapActionPerformed
 
     private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
-       
+        
         // Khi người chơi ấn thoát - show 1 dilog hỏi 
         Object[] options = {"yes", "no"};
         int selection = JOptionPane.showOptionDialog(
-        this,
-        "Bạn có muốn thoát hay không?",
-        "Thông báo!",
-        JOptionPane.YES_NO_OPTION,
-        JOptionPane.QUESTION_MESSAGE,
-        null,
-        options,
-        options[0]
+                this,
+                "Bạn có muốn thoát hay không?",
+                "Thông báo!",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                options[0]
         );
-        if(selection == 0){
+        if (selection == 0) {
             this.setVisible(false);
             this.dispose(); //Destroy the JFrame object
         }
     }//GEN-LAST:event_btnThoatActionPerformed
 
     public static void main(String args[]) {
-   
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               doiTuongManHinhKhoiDong = new ManHinhKhoiDong();
-               doiTuongManHinhKhoiDong.setLocationRelativeTo(null);
-               doiTuongManHinhKhoiDong.setVisible(true);
+                doiTuongManHinhKhoiDong = new ManHinhKhoiDong();
+                doiTuongManHinhKhoiDong.setLocationRelativeTo(null);
+                doiTuongManHinhKhoiDong.setVisible(true);
             }
         });
     }

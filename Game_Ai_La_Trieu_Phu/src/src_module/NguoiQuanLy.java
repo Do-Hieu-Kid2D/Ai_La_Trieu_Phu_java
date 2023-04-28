@@ -6,6 +6,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class NguoiQuanLy {
@@ -67,7 +68,7 @@ public class NguoiQuanLy {
         NguoiQuanLy admin = new NguoiQuanLy();
         ArrayList<NguoiQuanLy> kq = new ArrayList<>();
         try {
-            FileReader fr = new FileReader(pathFileData);
+            FileReader fr = new FileReader(pathFileData,StandardCharsets.UTF_8);
             BufferedReader br = new BufferedReader(fr);
             String line = null;
             while(true) {

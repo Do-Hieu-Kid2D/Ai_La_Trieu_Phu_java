@@ -409,11 +409,11 @@ public class ManHinhQuyenNguoiQuanLy extends javax.swing.JFrame {
     private void btnThemCauHoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemCauHoiActionPerformed
      
         String id = adminCauHoi.soLuongCauHoi();
-        String noiDung = txtCauHoi.getText();
-        String dapAnDung = txtDapAnDung.getText();
-        String dapAnSai1 = txtDapAnSai1.getText();
-        String dapAnSai2 = txtDapAnSai2.getText();
-        String dapAnSai3 = txtDapAnSai3.getText();
+        String noiDung = txtCauHoi.getText().trim();
+        String dapAnDung = txtDapAnDung.getText().trim();
+        String dapAnSai1 = txtDapAnSai1.getText().trim();
+        String dapAnSai2 = txtDapAnSai2.getText().trim();
+        String dapAnSai3 = txtDapAnSai3.getText().trim();
         if(this.batLoi(noiDung,dapAnDung,dapAnSai1,dapAnSai2,dapAnSai3)){
            JOptionPane.showMessageDialog(this, "Bạn chưa nhập đủ thông tin!", 
             "Thông báo!",JOptionPane.ERROR_MESSAGE);

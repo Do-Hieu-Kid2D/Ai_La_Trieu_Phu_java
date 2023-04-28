@@ -1,0 +1,20 @@
+0    Câu 1    đúng    sai    sai    sai
+1    Câu 2:     Đ    S    S    S
+2    Câu 3:    Đúng    Sai    Sai    Sai
+3    Câu 4:    Đ    S    S    S
+4    Câu 5:    Đ    S    S    S
+5    Câu 6:    Đ    S    S    S
+6    Câu 7:    Đ    S    S    S
+7    Câu 8:    Đúng    Sai    S    Sai
+8    Câu 9:    Đúng    Sai    S    Sai
+9    Câu 10:    Đúng    Sai    S    Sai
+10    Câu 11:    Đúng    Sai    S    Sai
+11    Câu 12:    Đúng    S    S    Sai
+12    Câu 13:    Đúng nha    S    S    Sai rồi
+13    Câu 14:    Đúng nha    S    S    Sai rồi
+14    Câu 15:    Đúng nha    S    S    Sai rồi
+15    Câu 16:    Đúng nha    Sai sai sai    S    Sai rồi
+16    Câu 17:    Đúng nha    Sai sai sai    S    Sai rồi
+17    Câu 18:    Đ    Sai sai sai    S    Sai rồi
+18    Câu 19:    Đ    Sai sai sai    S    Sai rồi
+19    Câu 20:    Đ    Sai sai sai    S    Sai rồi
