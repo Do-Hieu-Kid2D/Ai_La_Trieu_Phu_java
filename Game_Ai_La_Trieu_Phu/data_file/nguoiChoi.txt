@@ -1,4 +1,6 @@
 hieuha  hieuha  123  hieuha@hieu.ha  0
-Player_New  player1  1234  player1@gmail.com  1000000
 hieu  hieu12  1234  h2@gmail.com  0
 Hieu_Player  hieu  1234  hieu@gmail.com  150000000
+hhh  hhhh  123  dggg@fff.ddd  0
+aaa  aaa  123  hfehu@ygfg.sfdhysd  0
+Player_New  player1  1234  player1@gmail.com  0

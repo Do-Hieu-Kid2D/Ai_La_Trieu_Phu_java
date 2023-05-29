@@ -1,18 +1,20 @@
-0    Điểm cực Bắc phần đất liền nước ta ở vĩ độ 23° 23' B tại xã Lũng Cú, huyện Đồng Văn, thuộc tỉnh    Hà Giang    Cao Bằng    Lạng Sơn    Lào Cai 
-1    Đường biên giới dài nhất trên đất liền nước ta là với    Lào    Trung Quốc    Campuchia    Thái Lan
-2    Đường bờ biển của nước ta dài 3260 km, chạy từ    Tỉnh Quảng Ninh đến tỉnh Kiên Giang    Tỉnh lạng Sơn đến tỉnh Kiên Giang    Tỉnh Lạng Sơn đế tỉnh Cà Mau    Tỉnh Quang Ninh đến tỉnh Cà Mau
-3    Huyện đảo Hoàng Sa trực thuộc    Thành phố Đà Nẵng    Tỉnh Quảng Trị    Tỉnh Khánh Hòa    Tỉnh Quảng Ngãi
-4    Huyện đảo Trường Xa trực thuộc    Tỉnh Khánh Hòa    Tỉnh Quảng Trị    Thành phố Đà Nẵng    Tỉnh Quảng Ngãi
-5    Các nước xếp theo thứ tự giảm dần về dộ dài đường biên giới trên đấ liền với nước ta là    Lào, Trung Quốc, Campuchia    Lào, Campuchia, Trung Quốc    Trung Quốc, Campuchia, Lào    Trung Quốc, Lào, Campuchia
-6    Chiến thắng Vạn Tường (Quảng Ngãi, 1965) của quân dân miền Nam đã mở đầu cho cao trào    “Đồng khởi”    “Quyết thắng giặc Mỹ xâm lược”    Phá “ấp chiến lược”    “Tìm Mĩ mà đánh, lùng ngụy mà diệt”
-7    Ngày 27/1/1973 diễn ra sự kiện lịch sử nào dưới đây?    Hội nghị cấp cao ba nước Đông Dương được triệu tập    Mặt trận Dân tộc Giải phóng Miền Nam Việt Nam được thành lập    Chính phủ Cách mạng lâm thời Cộng hòa miền Nam Việt Nam ra đờ    Hiệp định Pa-ri về chấm dứt chiến tranh, lập lại hòa bình ở Việt Nam được kí kết
-8    Chiến dịch mở màn cho cuộc Tổng tiến công và nổi dậy mùa Xuân năm 1975 là    Tây Nguyên    Huế – Đà Nẵng    Hồ Chí Minh    Đường 14 – Phước Long
-9    AFC Asian Cup 2011 được tổ chức tại quốc gia nào?    Qatar    Hàn Quốc    Nhật Bản    Hàn Quốc
-10    Sông Bến Hải và sông Thạch Hãn nằm ở tỉnh nào?    Quảng Trị    Quảng Bình    Quảng Ninh    Quảng Ngãi
-11    Đại Ngu là quốc hiệu của nước ta vào triều đại nào?    Triều Hồ    Triều Ngô    Các chúa Nguyễn    Nhà Tây Sơn
-12    Các vua Hùng đặt quốc hiệu nước ta là gì?    Văn Lang    Âu Lạc    Vạn Xuân    Đại Việt
-13    Phi hành gia Phạm Tuân đã mang loại thực vật nào để nghiên cứu trên con tàu vũ trụ Phương Đông?    Bèo hoa dâu    Bèo tổ ong    Bèo cái    Bèo tấm
-14    Nền văn hóa của dân tộc Mường tập trung nhiều nhất ở địa phương nào ở nước ta?    Hòa Bình    Sơn La    Lạng Sơn    Thái Bình
-15    Ở áp suất thường, nhiệt độ đông đặc của thủy ngân lỏng là bao nhiêu độ bách phân?    - 29 độ C    - 59 độ C    - 39 độ C    - 49 độ C
-16    Sa mạc nào được công nhận là một trong 7 kỳ quan thiên nhiên của châu Phi?    Sa mạc Sahara    Sa mạc Namib    Sa mạc Kalahari    Sa mạc Gobi
-17    Đoạn sông Hồng chảy qua Việt Nam có độ dài bao nhiêu km?    510km    532km    499km    505km
+0    Câu 1    đúng    sai    sai    sai
+1    Câu 2:     Đ    S    S    S
+2    Câu 3:    Đúng    Sai    Sai    Sai
+3    Câu 4:    Đ    S    S    S
+4    Câu 5:    Đ    S    S    S
+5    Câu 6:    Đ    S    S    S
+6    Câu 7:    Đ    S    S    S
+7    Câu 8:    Đúng    Sai    S    Sai
+8    Câu 9:    Đúng    Sai    S    Sai
+9    Câu 10:    Đúng    Sai    S    Sai
+10    Câu 11:    Đúng    Sai    S    Sai
+11    Câu 12:    Đúng    S    S    Sai
+12    Câu 13:    Đúng nha    S    S    Sai rồi
+13    Câu 14:    Đúng nha    S    S    Sai rồi
+14    Câu 15:    Đúng nha    S    S    Sai rồi
+15    Câu 16:    Đúng nha    Sai sai sai    S    Sai rồi
+16    Câu 17:    Đúng nha    Sai sai sai    S    Sai rồi
+17    Câu 18:    Đ    Sai sai sai    S    Sai rồi
+18    Câu 19:    Đ    Sai sai sai    S    Sai rồi
+19    Câu 20:    Đ    Sai sai sai    S    Sai rồi
