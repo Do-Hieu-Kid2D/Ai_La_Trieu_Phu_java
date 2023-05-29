@@ -80,14 +80,6 @@ public class PhatNhac {
 		
 		String nv = scanner.next();
 	}
-        public static void main(String[] args) {
-            try {
-                PhatNhac p = new PhatNhac();
-            p.lenNhacVaoGame();
-            } catch (Exception e) {
-            }
-    }
-	
 	
 }
 
