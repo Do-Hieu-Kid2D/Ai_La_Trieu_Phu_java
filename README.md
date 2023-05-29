@@ -13,3 +13,24 @@
 
 ### 🎮 Một số hình ảnh 
 
+- #### Màn hình khởi động:
+<img src="https://github.com/Do-Hieu-Kid2D/Ai_La_Trieu_Phu_java/blob/brachThu2/Game_Ai_La_Trieu_Phu/redmid/dangNhap.png" width="500" >
+
+- #### Màn hình đăng ký:
+<img src="https://github.com/Do-Hieu-Kid2D/Ai_La_Trieu_Phu_java/blob/brachThu2/Game_Ai_La_Trieu_Phu/redmid/dangKy.png" width="500" >
+
+- #### Màn hình đăng nhập:
+<img src="https://github.com/Do-Hieu-Kid2D/Ai_La_Trieu_Phu_java/blob/brachThu2/Game_Ai_La_Trieu_Phu/redmid/dangNhap.png" width="500" >
+
+- #### Màn hình quản lý:
+<img src="https://github.com/Do-Hieu-Kid2D/Ai_La_Trieu_Phu_java/blob/brachThu2/Game_Ai_La_Trieu_Phu/redmid/quanly.png" width="500" >
+
+- #### Màn hình người chơi:
+<img src="https://github.com/Do-Hieu-Kid2D/Ai_La_Trieu_Phu_java/blob/brachThu2/Game_Ai_La_Trieu_Phu/redmid/manHinhNguoiChoi.png" width="500" >
+
+- #### Màn hình chơi game:
+<img src="https://github.com/Do-Hieu-Kid2D/Ai_La_Trieu_Phu_java/blob/brachThu2/Game_Ai_La_Trieu_Phu/redmid/choigame.png" width="500" >
+
+- #### Màn hình kết thúc:
+<img src="https://github.com/Do-Hieu-Kid2D/Ai_La_Trieu_Phu_java/blob/brachThu2/Game_Ai_La_Trieu_Phu/redmid/ketThuc.png" width="500" >
+
