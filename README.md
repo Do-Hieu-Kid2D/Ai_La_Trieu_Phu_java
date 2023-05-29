@@ -1,4 +1,15 @@
-# Ai_La_Trieu_Phu_java
+# :wave: Game Ai là triệu phú   :wave:
 
-starts 13/4/2023
-Code kiểu j ý - k biết sau này có xuất ra ứng dụng được không vì chưa quản lý theo Maven
+## ⏲️Time: `*5/2023*` 📄Language: `Java` 
+---
+### 👉Mô tả:
+- Sử dụng java lập trình một ứng dụng có cách chơi, format theo gameshow truyền hình **`Ai là triệu phú`**.
+
+- Khi clone app cần đảm bảo các `file sound` và `data_flie` **cùng cấp file** `src` hoặc khi chạy thì cùng cấp file `.jar` 
+
+- Lưu trữ database dưới dạng file txt, game gồm 2 luồng chơi gồm `quản lý` và `người chơi`.
+
+---
+
+### 🎮 Một số hình ảnh 
+
